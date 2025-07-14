@@ -24,9 +24,6 @@ export default function Home() {
           <div className="text-section">
             <h1 className="title">Hi, I&apos;m Danielle Lawton</h1>
             <p className="subtitle">Computer Science Portfolio</p>
-            <button className="projects-btn">Projects</button>
-            <button className="about-btn">About Me</button>
-            <button className="contact-btn">Contact Me</button>
           </div>
           
           <div className="illustration">
@@ -108,25 +105,6 @@ export default function Home() {
           color: #4a5568;
           margin: 0 0 2rem 0;
           font-weight: 400;
-        }
-
-        .projects-btn, .contact-btn, .about-btn {
-          background: #8FBC8F;
-          color: #2d3748;
-          border: none;
-          padding: 1rem 2rem;
-          font-size: 1.2rem;
-          font-weight: 600;
-          border-radius: 50px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
-        }
-
-        .projects-btn:hover, .contact-btn:hover, .about-btn:hover {
-          background: #7aa67a;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(143, 188, 143, 0.4);
         }
 
         .illustration {
