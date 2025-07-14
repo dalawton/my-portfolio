@@ -92,7 +92,7 @@ export default function Home() {
 
         .text-section {
           flex: 1;
-          max-width: 600px;
+          max-width: 800px;
         }
 
         .title {
@@ -116,6 +116,7 @@ export default function Home() {
           border: none;
           padding: 1rem 2rem;
           font-size: 1.2rem;
+          gap: 4rem;
           font-weight: 600;
           border-radius: 50px;
           cursor: pointer;
