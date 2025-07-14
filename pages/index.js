@@ -24,9 +24,11 @@ export default function Home() {
           <div className="text-section">
             <h1 className="title">Hi, I&apos;m Danielle Lawton</h1>
             <p className="subtitle">Computer Science Portfolio</p>
-            <button className="projects-btn">Projects</button>
-            <button className="about-btn">About Me</button>
-            <button className="contact-btn">Contact Me</button>
+            <div className="button-group">
+              <button className="projects-btn">Projects</button>
+              <button className="about-btn">About Me</button>
+              <button className="contact-btn">Contact Me</button>
+            </div>
           </div>
           
           <div className="illustration">
@@ -121,7 +123,7 @@ export default function Home() {
           background: #8FBC8F;
           color: #2d3748;
           border: none;
-          padding: 2rem 5rem;
+          padding: 1rem 2rem;
           font-size: 1.2rem;
           gap: 4rem;
           font-weight: 600;
@@ -129,6 +131,13 @@ export default function Home() {
           cursor: pointer;
           transition: all 0.3s ease;
           box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
+        }
+
+        .button-group {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+          margin-top: 2rem;
         }
 
         .projects-btn:hover, .contact-btn:hover, .about-btn:hover {
