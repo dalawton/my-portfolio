@@ -34,7 +34,7 @@ export default function Home() {
               src="/frog-image.png"
               alt="Character illustration"
               width={400}
-              height={400}
+              height={450}
               priority
             />
           </div>
@@ -186,7 +186,7 @@ export default function Home() {
 
           .illustration img {
             width: 400px;
-            height: 400px;
+            height: 450px;
           }
         }
       `}</style>
