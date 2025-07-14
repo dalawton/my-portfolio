@@ -40,6 +40,13 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <body className="body">
+        <div className="content">
+          <div className="text-section">
+            <p className="subtitle">Experience</p>
+          </div>
+        </div>
+      </body>
 
       <style jsx>{`
         .container {
