@@ -27,52 +27,6 @@ export default function Home() {
             <button className="about-btn">About</button>
             <button className="contact-btn">Contact Me</button>
           </div>
-          
-          <div className="illustration">
-            <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-              {/* Frog body */}
-              <ellipse cx="150" cy="200" rx="80" ry="60" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="3"/>
-              
-              {/* Frog belly */}
-              <ellipse cx="150" cy="210" rx="50" ry="40" fill="#F5DEB3"/>
-              
-              {/* Frog head */}
-              <ellipse cx="150" cy="120" rx="60" ry="50" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="3"/>
-              
-              {/* Left eye bump */}
-              <ellipse cx="125" cy="95" rx="25" ry="35" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="3"/>
-              
-              {/* Right eye bump */}
-              <ellipse cx="175" cy="95" rx="25" ry="35" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="3"/>
-              
-              {/* Left eye */}
-              <ellipse cx="125" cy="85" rx="20" ry="25" fill="#FFB6C1"/>
-              <ellipse cx="125" cy="85" rx="12" ry="15" fill="#2F4F4F"/>
-              
-              {/* Right eye */}
-              <ellipse cx="175" cy="85" rx="20" ry="25" fill="#FFB6C1"/>
-              <ellipse cx="175" cy="85" rx="12" ry="15" fill="#2F4F4F"/>
-              
-              {/* Left front leg */}
-              <ellipse cx="100" cy="180" rx="15" ry="25" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="2"/>
-              
-              {/* Right front leg */}
-              <ellipse cx="200" cy="180" rx="15" ry="25" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="2"/>
-              
-              {/* Left back leg */}
-              <ellipse cx="90" cy="220" rx="20" ry="30" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="2"/>
-              
-              {/* Right back leg */}
-              <ellipse cx="210" cy="220" rx="20" ry="30" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="2"/>
-              
-              {/* Mouth */}
-              <path d="M 130 130 Q 150 140 170 130" stroke="#5F8A5F" strokeWidth="2" fill="none"/>
-              
-              {/* Nostril details */}
-              <circle cx="140" cy="110" r="2" fill="#5F8A5F"/>
-              <circle cx="160" cy="110" r="2" fill="#5F8A5F"/>
-            </svg>
-          </div>
         </div>
       </main>
 
