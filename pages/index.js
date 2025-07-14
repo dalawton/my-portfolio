@@ -1,103 +1,220 @@
+// pages/index.js
 import Head from 'next/head'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Projects from '../components/Projects'
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Danielle - Student of Computer Science</title>
-        <meta name="description" content="My portfolio" />
+        <title>Danielle Lawton - Computer Science Portfolio</title>
+        <meta name="description" content="Danielle Lawton's Computer Science Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-      <Hero />
-      <About />
-      <Projects />
+      <header className="header">
+        <nav className="nav">
+          <a href="#about" className="nav-link">About</a>
+          <a href="#projects" className="nav-link">Projects</a>
+          <a href="#contact" className="nav-link">Contact</a>
+        </nav>
+      </header>
 
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
-        
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
+      <main className="main">
+        <div className="content">
+          <div className="text-section">
+            <h1 className="title">Hi, I&apos;M DANIELLE</h1>
+            <p className="subtitle">Computer Science Portfolio</p>
+            <button className="projects-btn">Projects</button>
+            <button className="about-btn">About</button>
+            <button className="contact-btn">Contact Me</button>
+          </div>
+          
+          <div className="illustration">
+            <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+              {/* Frog body */}
+              <ellipse cx="150" cy="200" rx="80" ry="60" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="3"/>
+              
+              {/* Frog belly */}
+              <ellipse cx="150" cy="210" rx="50" ry="40" fill="#F5DEB3"/>
+              
+              {/* Frog head */}
+              <ellipse cx="150" cy="120" rx="60" ry="50" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="3"/>
+              
+              {/* Left eye bump */}
+              <ellipse cx="125" cy="95" rx="25" ry="35" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="3"/>
+              
+              {/* Right eye bump */}
+              <ellipse cx="175" cy="95" rx="25" ry="35" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="3"/>
+              
+              {/* Left eye */}
+              <ellipse cx="125" cy="85" rx="20" ry="25" fill="#FFB6C1"/>
+              <ellipse cx="125" cy="85" rx="12" ry="15" fill="#2F4F4F"/>
+              
+              {/* Right eye */}
+              <ellipse cx="175" cy="85" rx="20" ry="25" fill="#FFB6C1"/>
+              <ellipse cx="175" cy="85" rx="12" ry="15" fill="#2F4F4F"/>
+              
+              {/* Left front leg */}
+              <ellipse cx="100" cy="180" rx="15" ry="25" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="2"/>
+              
+              {/* Right front leg */}
+              <ellipse cx="200" cy="180" rx="15" ry="25" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="2"/>
+              
+              {/* Left back leg */}
+              <ellipse cx="90" cy="220" rx="20" ry="30" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="2"/>
+              
+              {/* Right back leg */}
+              <ellipse cx="210" cy="220" rx="20" ry="30" fill="#8FBC8F" stroke="#5F8A5F" strokeWidth="2"/>
+              
+              {/* Mouth */}
+              <path d="M 130 130 Q 150 140 170 130" stroke="#5F8A5F" strokeWidth="2" fill="none"/>
+              
+              {/* Nostril details */}
+              <circle cx="140" cy="110" r="2" fill="#5F8A5F"/>
+              <circle cx="160" cy="110" r="2" fill="#5F8A5F"/>
+            </svg>
+          </div>
+        </div>
+      </main>
 
-        body {
-          font-family: 'Orbitron', monospace;
-          background: linear-gradient(135deg, #0D2D23 0%, #1B5A4A 25%, #0A342D 50%, #033530 75%, #165A54 100%);
-          color: white;
-          min-height: 100vh;
-          position: relative;
-          overflow-x: hidden;
-        }
-
-        body::before {
-          content: '';
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: 
-            radial-gradient(circle at 20% 30%, rgba(141, 196, 73, 0.2) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(155, 216, 84, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(56, 142, 60, 0.2) 0%, transparent 50%),
-            radial-gradient(circle at 90% 90%, rgba(139, 195, 74, 0.25) 0%, transparent 50%);
-          pointer-events: none;
-          z-index: -1;
-        }
-
+      <style jsx>{`
         .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
+          min-height: 100vh;
+          background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
-        .stars {
+        .header {
           position: fixed;
           top: 0;
-          left: 0;
+          right: 0;
+          padding: 2rem 3rem;
+          z-index: 1000;
+        }
+
+        .nav {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-link {
+          color: #4a5568;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1.1rem;
+          transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+          color: #2d3748;
+        }
+
+        .main {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          padding: 2rem;
+        }
+
+        .content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 1200px;
           width: 100%;
-          height: 100%;
-          pointer-events: none;
-          z-index: -1;
+          gap: 4rem;
         }
 
-        .star {
-          position: absolute;
-          width: 2px;
-          height: 2px;
-          background: white;
-          border-radius: 50%;
+        .text-section {
+          flex: 1;
+          max-width: 600px;
         }
 
-        .neon-text {
-          text-shadow: 
-            0 0 5px currentColor,
-            0 0 10px currentColor;
+        .title {
+          font-size: 4rem;
+          font-weight: 700;
+          color: #2d3748;
+          margin: 0 0 1rem 0;
+          line-height: 1.2;
         }
 
-        .floating {
-          animation: float 6s ease-in-out infinite;
+        .subtitle {
+          font-size: 1.5rem;
+          color: #4a5568;
+          margin: 0 0 2rem 0;
+          font-weight: 400;
+        }
+
+        .projects-btn {
+          background: #8FBC8F;
+          color: #2d3748;
+          border: none;
+          padding: 1rem 2rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
+        }
+
+        .projects-btn:hover {
+          background: #7aa67a;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(143, 188, 143, 0.4);
+        }
+
+        .illustration {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .illustration svg {
+          animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
         }
 
-        .hover-glow {
-          transition: all 0.3s ease;
-        }
+        @media (max-width: 768px) {
+          .content {
+            flex-direction: column;
+            text-align: center;
+            gap: 2rem;
+          }
 
-        .hover-glow:hover {
-          transform: scale(1.05);
-          box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+          .title {
+            font-size: 2.5rem;
+          }
+
+          .subtitle {
+            font-size: 1.2rem;
+          }
+
+          .header {
+            padding: 1rem 2rem;
+          }
+
+          .nav {
+            gap: 1rem;
+          }
+
+          .nav-link {
+            font-size: 1rem;
+          }
+
+          .illustration svg {
+            width: 250px;
+            height: 250px;
+          }
         }
       `}</style>
     </div>
