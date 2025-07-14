@@ -121,7 +121,7 @@ export default function Home() {
           background: #8FBC8F;
           color: #2d3748;
           border: none;
-          padding: 1rem 2rem;
+          padding: 2rem 5rem;
           font-size: 1.2rem;
           gap: 4rem;
           font-weight: 600;
