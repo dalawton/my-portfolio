@@ -33,8 +33,8 @@ export default function Home() {
             <Image
               src="/frog-image.png"
               alt="Character illustration"
-              width={300}
-              height={300}
+              width={400}
+              height={400}
               priority
             />
           </div>
@@ -110,7 +110,7 @@ export default function Home() {
           font-weight: 400;
         }
 
-        .projects-btn {
+        .projects-btn, .contact-btn, .about-btn {
           background: #8FBC8F;
           color: #2d3748;
           border: none;
@@ -123,7 +123,7 @@ export default function Home() {
           box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
         }
 
-        .projects-btn:hover {
+        .projects-btn:hover, .contact-btn:hover, .about-btn:hover {
           background: #7aa67a;
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(143, 188, 143, 0.4);
@@ -177,8 +177,8 @@ export default function Home() {
           }
 
           .illustration img {
-            width: 250px;
-            height: 250px;
+            width: 400px;
+            height: 400px;
           }
         }
       `}</style>
