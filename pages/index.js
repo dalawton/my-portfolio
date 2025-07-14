@@ -1,12 +1,13 @@
 // pages/index.js
 import Head from 'next/head'
+import Image from 'next/image'
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
         <title>Danielle Lawton - Computer Science Portfolio</title>
-        <meta name="description" content="Danielle Lawton's Computer Science Portfolio" />
+        <meta name="description" content="Danielle's Computer Science Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -21,11 +22,21 @@ export default function Home() {
       <main className="main">
         <div className="content">
           <div className="text-section">
-            <h1 className="title">Hi, I&apos;M DANIELLE</h1>
+            <h1 className="title">Hi, I&apos;m Danielle Lawton</h1>
             <p className="subtitle">Computer Science Portfolio</p>
             <button className="projects-btn">Projects</button>
-            <button className="about-btn">About</button>
+            <button className="about-btn">About Me</button>
             <button className="contact-btn">Contact Me</button>
+          </div>
+          
+          <div className="illustration">
+            <Image
+              src="/frog-image.png"
+              alt="Character illustration"
+              width={300}
+              height={300}
+              priority
+            />
           </div>
         </div>
       </main>
@@ -125,7 +136,7 @@ export default function Home() {
           justify-content: center;
         }
 
-        .illustration svg {
+        .illustration img {
           animation: float 3s ease-in-out infinite;
         }
 
@@ -165,7 +176,7 @@ export default function Home() {
             font-size: 1rem;
           }
 
-          .illustration svg {
+          .illustration img {
             width: 250px;
             height: 250px;
           }
