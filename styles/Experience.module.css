@@ -56,8 +56,8 @@
 }
 
 .markerDot {
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
   background-image: url('/lilypad.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -65,7 +65,7 @@
 }
 
 .timelineLine {
-  width: 3px;
+  width: 2px;
   height: 100px;
   background: rgba(21, 95, 57, 0.8);
   margin-top: 10px;
@@ -247,11 +247,17 @@
   transform: translateY(-2px);
 }
 
-.illustration {
-  flex-shrink: 0;
+.sectionTitleRow {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.titleFrog {
+  width: 150px;
+  height: 300px;
 }
 
 @media (max-width: 768px) {

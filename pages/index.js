@@ -62,7 +62,6 @@ export default function Home() {
         <nav className={homeStyles.nav}>
           <a href="#experience" className={homeStyles.navLink}>Experience</a>
           <a href="#projects" className={homeStyles.navLink}>Projects</a>
-          <a href="#contact" className={homeStyles.navLink}>Contact</a>
         </nav>
       </header>
 
@@ -87,15 +86,15 @@ export default function Home() {
 
       <section id="experience" className={experienceStyles.experienceSection}>
         <div className={experienceStyles.experienceContainer}>
-          <div className={experienceStyles.sectionTitle}>
-            <h2>Experience</h2>
+          <div className={experienceStyles.sectionTitleRow}>
+            <h2 className={experienceStyles.sectionTitle}>Experience</h2>
             <Image 
               src="/frog-image.png"
-              alt=""
-              width={100}
-              height={200}
+              alt="Frog"
+              width={150}
+              height={300}
               priority
-              className={experienceStyles.illustration}
+              className={experienceStyles.titleFrog}
             />
           </div>
           
@@ -160,7 +159,7 @@ export default function Home() {
 
       <section id="projects" className={projectsStyles.projectsSection}>
         <div className={projectsStyles.projectsContainer}>
-          <h2 className={projectsStyles.sectionTitle}>About Me</h2>
+          <h2 className={projectsStyles.sectionTitle}>Projects</h2>
           <div className={projectsStyles.timeline}>
             {projects.map((proj) => (
               <div key={proj.id} className={projectsStyles.timelineItem}>
