@@ -257,7 +257,7 @@
 
 .titleFrog {
   width: 200px;
-  height: 300px;
+  height: 200px;
 }
 
 @media (max-width: 768px) {
@@ -338,7 +338,7 @@
 
   .illustration img {
     width: 200px;
-    height: 300px;
+    height: 200px;
   }
 }
 
@@ -362,6 +362,6 @@
 
   .illustration img {
     width: 100px;
-    height: 200px;
+    height: 100px;
   }
 }
