@@ -66,8 +66,7 @@ export default function Home() {
           
           <div className={homeStyles.illustration}>
             <Image
-              src="/frog-image.png"
-              alt="Character illustration"
+              src="/peace-frog.png"
               width={400}
               height={500}
               priority
@@ -78,7 +77,16 @@ export default function Home() {
 
       <section id="experience" className={experienceStyles.experienceSection}>
         <div className={experienceStyles.experienceContainer}>
-          <h2 className={experienceStyles.sectionTitle}>Experience</h2>
+          <h2 className={experienceStyles.sectionTitle}>Experience
+            <div className={homeStyles.illustration}>
+              <Image 
+                src="/frog-image.png"
+                width={200}
+                height={300}
+                priority
+              />
+            </div>
+          </h2>
           
           <div className={experienceStyles.timeline}>
             {experiences.map((exp, index) => (
@@ -142,8 +150,8 @@ export default function Home() {
       <section id="about" className={aboutStyles.aboutSection}>
         <div className={aboutStyles.aboutContainer}>
           <h2 className={aboutStyles.sectionTitle}>About Me</h2>
-          </div>
-        </section>
+        </div>
+      </section>
     </div>
   )
 }
