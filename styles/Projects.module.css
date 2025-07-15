@@ -1,7 +1,7 @@
 .projectsSection {
-    padding: 40px 0;
+    padding: 10px 0;
     background: #547a54;
-    min-height: 60vh;
+    min-height: 50vh;
     position: relative;
 }
 
@@ -17,7 +17,7 @@
 .projectsContainer {
     max-width: max-content;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
     position: relative;
     z-index: 1;
 }
@@ -27,7 +27,7 @@
   font-size: 3rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
