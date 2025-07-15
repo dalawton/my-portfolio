@@ -161,29 +161,29 @@ export default function Home() {
             {projects.map((proj) => (
               <div key={proj.id} className={projectsStyles.timelineItem}>
                 <div className={projectsStyles.projectsCard}>
-                  <div className={projectsStyles.cardHeader} onClick={() => toggleCard(exp.id)}>
+                  <div className={projectsStyles.cardHeader} onClick={() => toggleCard(proj.id)}>
                     <div className={projectsStyles.companyInfo}>
                       <div className={projectsStyles.logoContainer}>
                       </div>
                       <div className={projectsStyles.titleInfo}>
-                        <h3 className={projectsStyles.jobTitle}>{exp.title}</h3>
+                        <h3 className={projectsStyles.jobTitle}>{proj.title}</h3>
                       </div>
                     </div>
                     <div className={projectsStyles.technologies}>
                       <div className={projectsStyles.techTags}>
-                        {exp.technologies.map((tech, i) => (
+                        {proj.technologies.map((tech, i) => (
                           <span key={i} className={projectsStyles.techTag}>{tech}</span>
                         ))}
                       </div>
                     </div>
-                    <div className={`${projectsStyles.expandIcon} ${expandedCard === exp.id ? projectsStyles.expanded : ''}`}>
+                    <div className={`${projectsStyles.expandIcon} ${expandedCard === proj.id ? projectsStyles.expanded : ''}`}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <polyline points="6,9 12,15 18,9"></polyline>
                       </svg>
                     </div>
                   </div>
                   <div className={projectsStyles.cardDescription}>
-                    <p>{exp.description}</p>
+                    <p>{proj.description}</p>
                   </div>
                 </div>
               </div>
