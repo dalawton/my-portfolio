@@ -1,6 +1,6 @@
 /* styles/Experience.module.css */
 .experienceSection {
-  padding: 40px 0;
+  padding: 20px 0;
   background: #6a8d6a;
   min-height: 60vh;
   position: relative;
@@ -31,7 +31,7 @@
   font-size: 3rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 

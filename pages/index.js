@@ -69,7 +69,7 @@ export default function Home() {
         <div className={homeStyles.content}>
           <div className={homeStyles.textSection}>
             <h1 className={homeStyles.title}>Hi, I&apos;m Danielle</h1>
-            <p className={homeStyles.subtitle}>Computer Science Student at Syracuse University</p>
+            <p className={homeStyles.subtitle}>Currently I&apos;m a junior Computer Science major at Syracuse University! I serve as the Secretary for Innovate Orange and I&apos;m a member of Delta Phi Epsilon!</p>
           </div>
           
           <div className={homeStyles.illustration}>
