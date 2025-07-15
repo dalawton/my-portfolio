@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import homeStyles from '../styles/Home.module.css'
 import experienceStyles from '../styles/Experience.module.css'
-import aboutStyles from '../styles/About.module.css'
+import projectsStyles from '../styles/Projects.module.css'
 
 export default function Home() {
   const [expandedCard, setExpandedCard] = useState(null);
@@ -20,7 +20,7 @@ export default function Home() {
       responsibilities: [
         "TO BE ADDED"
       ],
-      technologies: ["PHP", "JavaScript", "SQL", "HTML"],
+      technologies: ["PHP", "JavaScript", "SQL", "HTML/CSS"],
     },
     {
       id: 2,
@@ -33,6 +33,16 @@ export default function Home() {
         "TO BE ADDED"
       ],
       technologies: ["TODO"],
+    },
+  ];
+
+  const projects = [
+    {
+      id: 3,
+      title: "EIC Inventory Tracker",
+      description: "Automated inventory management system that syncs with SQL database to provide real time inventory counts. Created an online order form for new parts to send emails and update to database on form submissions. Additional functionality for tracking completed batteries and repairs via serial numbers.",
+      technologies: ["PHP", "JavaScript", "SQL", "HTML/CSS"],
+      link: "https://github.com/dalawton/eic-inventory-final",
     },
   ];
 
@@ -51,7 +61,6 @@ export default function Home() {
       <header className={homeStyles.header}>
         <nav className={homeStyles.nav}>
           <a href="#experience" className={homeStyles.navLink}>Experience</a>
-          <a href="#about" className={homeStyles.navLink}>About</a>
           <a href="#projects" className={homeStyles.navLink}>Projects</a>
           <a href="#contact" className={homeStyles.navLink}>Contact</a>
         </nav>
@@ -77,15 +86,14 @@ export default function Home() {
 
       <section id="experience" className={experienceStyles.experienceSection}>
         <div className={experienceStyles.experienceContainer}>
-          <div className={homeStyles.illustration}>
+          <h2 className={experienceStyles.sectionTitle}>Experience
               <Image 
                 src="/frog-image.png"
                 width={200}
                 height={300}
                 priority
               />
-            </div>
-          <h2 className={experienceStyles.sectionTitle}>Experience</h2>
+          </h2>
           
           <div className={experienceStyles.timeline}>
             {experiences.map((exp, index) => (
@@ -146,9 +154,35 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className={aboutStyles.aboutSection}>
-        <div className={aboutStyles.aboutContainer}>
-          <h2 className={aboutStyles.sectionTitle}>About Me</h2>
+      <section id="projects" className={projectsStyles.projectsSection}>
+        <div className={projectsStyles.projectsContainer}>
+          <h2 className={projectsStyles.sectionTitle}>About Me</h2>
+          <div className={projectsStyles.projectsCard}>
+            <div className={projectsStyles.cardHeader} onClick={() => toggleCard(exp.id)}>
+              <div className={projectsStyles.companyInfo}>
+                <div className={eprojectsStyles.logoContainer}>
+                </div>
+                <div className={projectsStyles.titleInfo}>
+                  <h3 className={projectsStyles.jobTitle}>{exp.title}</h3>
+                </div>
+              </div>
+              <div className={projectsStyles.technologies}>
+                <div className={projectsStyles.techTags}>
+                  {exp.technologies.map((tech, i) => (
+                    <span key={i} className={projectsStyles.techTag}>{tech}</span>
+                  ))}
+                </div>
+              </div>
+              <div className={`${projectsStyles.expandIcon} ${expandedCard === exp.id ? projectsStyles.expanded : ''}`}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="6,9 12,15 18,9"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div className={projectsStyles.cardDescription}>
+              <p>{exp.description}</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

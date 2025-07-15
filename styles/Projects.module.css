@@ -1,0 +1,205 @@
+.projectsSection {
+    padding: 40px 0;
+    background: #547a54;
+    min-height: 60vh;
+    position: relative;
+}
+
+.projectsSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.projectsContainer {
+    max-width: max-content;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+    
+.sectionTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.projectsCard {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.projectsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cardHeader {
+  padding: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.cardHeader:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.titleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jobTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0c2918;
+  margin: 0;
+}
+
+.companyInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.expandIcon {
+  transition: transform 0.3s ease;
+  color: #7f8c8d;
+}
+
+.expandIcon.expanded {
+  transform: rotate(180deg);
+}
+
+.cardDescription {
+  padding: 0 25px 20px;
+  color: #34495e;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.cardDetails {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.cardDetails.expanded {
+  max-height: 500px;
+  padding: 25px;
+}
+
+.technologies h5 {
+  color: #2c503a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techTag {
+  background: #28814d;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.techTag:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .projectsSection {
+    padding: 60px 0;
+  }
+  
+  .projectsContainer {
+    padding: 0 15px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .cardHeader {
+    padding: 20px;
+  }
+  
+  .companyInfo {
+    gap: 15px;
+  }
+  
+  .logoContainer {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .jobTitle {
+    font-size: 1.2rem;
+  }
+  
+  .cardDescription {
+    padding: 0 20px 15px;
+  }
+  
+  .cardDetails.expanded {
+    padding: 20px;
+  }
+  
+  .techTags {
+    gap: 8px;
+  }
+  
+  .techTag {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .cardHeader {
+    padding: 15px;
+  }
+  
+  .companyInfo {
+    gap: 12px;
+  }
+  
+  .logoContainer {
+    width: 40px;
+    height: 40px;
+  }
+}
