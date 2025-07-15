@@ -60,7 +60,7 @@ export default function Home() {
         <div className={homeStyles.content}>
           <div className={homeStyles.textSection}>
             <h1 className={homeStyles.title}>Hi, I&apos;m Danielle</h1>
-            <p className={homeStyles.subtitle}>Computer Science Portfolio</p>
+            <p className={homeStyles.subtitle}>Computer Science Student at Syracuse University</p>
           </div>
           
           <div className={homeStyles.illustration}>
@@ -137,6 +137,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section id="about" className={aboutStyles.aboutSection}>
+        <div className={aboutStyles.aboutContainer}>
+          <h2 className={aboutStyles.sectionTitle}>About Me</h2>
+          </div>
+        </section>
     </div>
   )
 }
