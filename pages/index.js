@@ -163,7 +163,7 @@ export default function Home() {
                 <div className={projectsStyles.projectsCard}>
                   <div className={projectsStyles.cardHeader} onClick={() => toggleCard(exp.id)}>
                     <div className={projectsStyles.companyInfo}>
-                      <div className={eprojectsStyles.logoContainer}>
+                      <div className={projectsStyles.logoContainer}>
                       </div>
                       <div className={projectsStyles.titleInfo}>
                         <h3 className={projectsStyles.jobTitle}>{exp.title}</h3>
