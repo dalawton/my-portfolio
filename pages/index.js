@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import homeStyles from '../styles/Home.module.css'
 import experienceStyles from '../styles/Experience.module.css'
+import aboutStyles from '../styles/About.module.css'
 
 export default function Home() {
   const [expandedCard, setExpandedCard] = useState(null);
