@@ -76,8 +76,8 @@ export default function Home() {
             <Image
               src="/peace-frog.png"
               alt="Hi Frog"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               priority
             />
           </div>
@@ -91,7 +91,7 @@ export default function Home() {
             <Image 
               src="/frog-image.png"
               alt="Frog"
-              width={200}
+              width={250}
               height={200}
               priority
               className={experienceStyles.titleFrog}
