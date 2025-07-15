@@ -157,31 +157,35 @@ export default function Home() {
       <section id="projects" className={projectsStyles.projectsSection}>
         <div className={projectsStyles.projectsContainer}>
           <h2 className={projectsStyles.sectionTitle}>About Me</h2>
-          <div className={projectsStyles.projectsCard}>
-            <div className={projectsStyles.cardHeader} onClick={() => toggleCard(exp.id)}>
-              <div className={projectsStyles.companyInfo}>
-                <div className={eprojectsStyles.logoContainer}>
+          <div className={experienceStyles.timeline}>
+            {projects.map((exp) => (
+            <div className={projectsStyles.projectsCard}>
+              <div className={projectsStyles.cardHeader} onClick={() => toggleCard(exp.id)}>
+                <div className={projectsStyles.companyInfo}>
+                  <div className={eprojectsStyles.logoContainer}>
+                  </div>
+                  <div className={projectsStyles.titleInfo}>
+                    <h3 className={projectsStyles.jobTitle}>{exp.title}</h3>
+                  </div>
                 </div>
-                <div className={projectsStyles.titleInfo}>
-                  <h3 className={projectsStyles.jobTitle}>{exp.title}</h3>
+                <div className={projectsStyles.technologies}>
+                  <div className={projectsStyles.techTags}>
+                    {exp.technologies.map((tech, i) => (
+                      <span key={i} className={projectsStyles.techTag}>{tech}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className={`${projectsStyles.expandIcon} ${expandedCard === exp.id ? projectsStyles.expanded : ''}`}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="6,9 12,15 18,9"></polyline>
+                  </svg>
                 </div>
               </div>
-              <div className={projectsStyles.technologies}>
-                <div className={projectsStyles.techTags}>
-                  {exp.technologies.map((tech, i) => (
-                    <span key={i} className={projectsStyles.techTag}>{tech}</span>
-                  ))}
-                </div>
-              </div>
-              <div className={`${projectsStyles.expandIcon} ${expandedCard === exp.id ? projectsStyles.expanded : ''}`}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="6,9 12,15 18,9"></polyline>
-                </svg>
+              <div className={projectsStyles.cardDescription}>
+                <p>{exp.description}</p>
               </div>
             </div>
-            <div className={projectsStyles.cardDescription}>
-              <p>{exp.description}</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
