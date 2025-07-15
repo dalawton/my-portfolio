@@ -76,6 +76,7 @@ export default function Home() {
           <div className={homeStyles.illustration}>
             <Image
               src="/peace-frog.png"
+              alt=""
               width={400}
               height={500}
               priority
@@ -86,14 +87,17 @@ export default function Home() {
 
       <section id="experience" className={experienceStyles.experienceSection}>
         <div className={experienceStyles.experienceContainer}>
-          <h2 className={experienceStyles.sectionTitle}>Experience
-              <Image 
-                src="/frog-image.png"
-                width={200}
-                height={300}
-                priority
-              />
-          </h2>
+          <div className={experienceStyles.sectionTitle}>
+            <h2>Experience</h2>
+            <Image 
+              src="/frog-image.png"
+              alt=""
+              width={40}
+              height={40}
+              priority
+              className={experienceStyles.illustration}
+            />
+          </div>
           
           <div className={experienceStyles.timeline}>
             {experiences.map((exp, index) => (
@@ -179,7 +183,9 @@ export default function Home() {
                   </div>
                   <div className={projectsStyles.cardDescription}>
                     <p>{proj.description}</p>
-                    <p>{proj.link}</p>
+                    <a href={proj.link} target="_blank" rel="noopener noreferrer" className={projectsStyles.projectLink}>
+                      {proj.link}
+                    </a>
                   </div>
                 </div>
               </div>

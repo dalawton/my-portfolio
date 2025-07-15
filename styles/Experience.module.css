@@ -56,14 +56,12 @@
 }
 
 .markerDot {
-  width: 20px;
-  height: 20px;
-  background: #85e38b;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 2;
+  width: 40px;
+  height: 40px;
+  background-image: url('/lilypad.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .timelineLine {
