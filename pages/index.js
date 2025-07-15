@@ -1,32 +1,69 @@
 // pages/index.js
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
+import homeStyles from '../styles/Home.module.css'
+import experienceStyles from '../styles/Experience.module.css'
 
 export default function Home() {
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const experiences = [
+    {
+      id: 1,
+      title: "Software Engineer Intern",
+      company: "EIC Labratories",
+      period: "Summer 2025",
+      location: "Norwood, MA",
+      description: "Developed inventory database and tracking systems to automize inventory counts",
+      responsibilities: [
+        "TO BE ADDED"
+      ],
+      technologies: ["PHP", "JavaScript", "SQL", "HTML"],
+    },
+    {
+      id: 2,
+      title: "Quality Control Specialist Intern",
+      company: "DS Graphics | University Wilde",
+      period: "Summer 2024",
+      location: "Lowell, MA",
+      description: "Conducted quality control checks and developed system processes",
+      responsibilities: [
+        "TO BE ADDED"
+      ],
+      technologies: ["TODO"],
+    },
+  ];
+
+  const toggleCard = (id) => {
+    setExpandedCard(expandedCard === id ? null : id);
+  };
+
   return (
-    <div className="container">
+    <div className={homeStyles.container}>
       <Head>
-        <title>Danielle Lawton - Computer Science Portfolio</title>
+        <title>Danielle - Computer Science Portfolio</title>
         <meta name="description" content="Danielle's Computer Science Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="header">
-        <nav className="nav">
-          <a href="#about" className="nav-link">About</a>
-          <a href="#projects" className="nav-link">Projects</a>
-          <a href="#contact" className="nav-link">Contact</a>
+      <header className={homeStyles.header}>
+        <nav className={homeStyles.nav}>
+          <a href="#experience" className={homeStyles.navLink}>Experience</a>
+          <a href="#about" className={homeStyles.navLink}>About</a>
+          <a href="#projects" className={homeStyles.navLink}>Projects</a>
+          <a href="#contact" className={homeStyles.navLink}>Contact</a>
         </nav>
       </header>
 
-      <main className="main">
-        <div className="content">
-          <div className="text-section">
-            <h1 className="title">Hi, I&apos;m Danielle Lawton</h1>
-            <p className="subtitle">Computer Science Portfolio</p>
+      <main className={homeStyles.main}>
+        <div className={homeStyles.content}>
+          <div className={homeStyles.textSection}>
+            <h1 className={homeStyles.title}>Hi, I&apos;m Danielle</h1>
+            <p className={homeStyles.subtitle}>Computer Science Portfolio</p>
           </div>
           
-          <div className="illustration">
+          <div className={homeStyles.illustration}>
             <Image
               src="/frog-image.png"
               alt="Character illustration"
@@ -38,128 +75,68 @@ export default function Home() {
         </div>
       </main>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        .header {
-          position: fixed;
-          top: 0;
-          right: 0;
-          padding: 2rem 3rem;
-          z-index: 1000;
-        }
-
-        .nav {
-          display: flex;
-          gap: 2rem;
-        }
-
-        .nav-link {
-          color: #4a5568;
-          text-decoration: none;
-          font-weight: 500;
-          font-size: 1.1rem;
-          transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-          color: #2d3748;
-        }
-
-        .main {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 100vh;
-          padding: 2rem;
-        }
-
-        .content {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          max-width: 1200px;
-          width: 100%;
-          gap: 4rem;
-        }
-
-        .text-section {
-          flex: 1;
-          max-width: 600px;
-        }
-
-        .title {
-          font-size: 4rem;
-          font-weight: 700;
-          color: #2d3748;
-          margin: 0 0 1rem 0;
-          line-height: 1.2;
-        }
-
-        .subtitle {
-          font-size: 1.5rem;
-          color: #4a5568;
-          margin: 0 0 2rem 0;
-          font-weight: 400;
-        }
-
-        .illustration {
-          flex-shrink: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .illustration img {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .content {
-            flex-direction: column;
-            text-align: center;
-            gap: 2rem;
-          }
-
-          .title {
-            font-size: 2.5rem;
-          }
-
-          .subtitle {
-            font-size: 1.2rem;
-          }
-
-          .header {
-            padding: 1rem 2rem;
-          }
-
-          .nav {
-            gap: 1rem;
-          }
-
-          .nav-link {
-            font-size: 1rem;
-          }
-
-          .illustration img {
-            width: 400px;
-            height: 400px;
-          }
-        }
-      `}</style>
+      <section id="experience" className={experienceStyles.experienceSection}>
+        <div className={experienceStyles.experienceContainer}>
+          <h2 className={experienceStyles.sectionTitle}>Experience</h2>
+          
+          <div className={experienceStyles.timeline}>
+            {experiences.map((exp, index) => (
+              <div key={exp.id} className={experienceStyles.timelineItem}>
+                <div className={experienceStyles.timelineMarker}>
+                  <div className={experienceStyles.markerDot}></div>
+                  {index < experiences.length && <div className={experienceStyles.timelineLine}></div>}
+                </div>
+                
+                <div className={experienceStyles.experienceCard}>
+                  <div className={experienceStyles.cardHeader} onClick={() => toggleCard(exp.id)}>
+                    <div className={experienceStyles.companyInfo}>
+                      <div className={experienceStyles.logoContainer}>
+                      </div>
+                      <div className={experienceStyles.titleInfo}>
+                        <h3 className={experienceStyles.jobTitle}>{exp.title}</h3>
+                        <h4 className={experienceStyles.companyName}>{exp.company}</h4>
+                        <div className={experienceStyles.periodLocation}>
+                          <span className={experienceStyles.period}>{exp.period}</span>
+                          <span className={experienceStyles.location}>{exp.location}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={`${experienceStyles.expandIcon} ${expandedCard === exp.id ? experienceStyles.expanded : ''}`}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <div className={experienceStyles.cardDescription}>
+                    <p>{exp.description}</p>
+                  </div>
+                  
+                  <div className={`${experienceStyles.cardDetails} ${expandedCard === exp.id ? experienceStyles.expanded : ''}`}>
+                    <div className={experienceStyles.responsibilities}>
+                      <h5>Key Responsibilities:</h5>
+                      <ul>
+                        {exp.responsibilities.map((resp, i) => (
+                          <li key={i}>{resp}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className={experienceStyles.technologies}>
+                      <h5>Technologies Used:</h5>
+                      <div className={experienceStyles.techTags}>
+                        {exp.technologies.map((tech, i) => (
+                          <span key={i} className={experienceStyles.techTag}>{tech}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

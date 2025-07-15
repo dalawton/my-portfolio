@@ -1,0 +1,346 @@
+/* styles/Experience.module.css */
+.experienceSection {
+  padding: 80px 0;
+  background: #6a8d6a;
+  min-height: 100vh;
+  position: relative;
+}
+
+.experienceSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+  background-size: 100px 100px;
+  pointer-events: none;
+}
+
+.experienceContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timelineItem {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timelineMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+  position: relative;
+}
+
+.markerDot {
+  width: 20px;
+  height: 20px;
+  background: #85e38b;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.timelineLine {
+  width: 3px;
+  height: 100px;
+  background: rgba(21, 95, 57, 0.8);
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.experienceCard {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.experienceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cardHeader {
+  padding: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.cardHeader:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.companyInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logoContainer {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.companyLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.titleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jobTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0c2918;
+  margin: 0;
+}
+
+.companyName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #176529;
+  margin: 0;
+}
+
+.periodLocation {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.period, .location {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.period {
+  font-weight: 500;
+}
+
+.expandIcon {
+  transition: transform 0.3s ease;
+  color: #7f8c8d;
+}
+
+.expandIcon.expanded {
+  transform: rotate(180deg);
+}
+
+.cardDescription {
+  padding: 0 25px 20px;
+  color: #34495e;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.cardDetails {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.cardDetails.expanded {
+  max-height: 500px;
+  padding: 25px;
+}
+
+.responsibilities {
+  margin-bottom: 25px;
+}
+
+.responsibilities h5 {
+  color: #2c5038;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.responsibilities ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilities li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #345e46;
+  line-height: 1.5;
+}
+
+.responsibilities li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #76d98ab5;
+  font-size: 0.8rem;
+}
+
+.technologies h5 {
+  color: #2c503a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techTag {
+  background: #28814d;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.techTag:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .experienceSection {
+    padding: 60px 0;
+  }
+  
+  .experienceContainer {
+    padding: 0 15px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .timelineItem {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  
+  .timelineMarker {
+    flex-direction: row;
+    margin-right: 0;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  
+  .timelineLine {
+    width: 100px;
+    height: 3px;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  
+  .cardHeader {
+    padding: 20px;
+  }
+  
+  .companyInfo {
+    gap: 15px;
+  }
+  
+  .logoContainer {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .jobTitle {
+    font-size: 1.2rem;
+  }
+  
+  .companyName {
+    font-size: 1rem;
+  }
+  
+  .periodLocation {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .cardDescription {
+    padding: 0 20px 15px;
+  }
+  
+  .cardDetails.expanded {
+    padding: 20px;
+  }
+  
+  .techTags {
+    gap: 8px;
+  }
+  
+  .techTag {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .cardHeader {
+    padding: 15px;
+  }
+  
+  .companyInfo {
+    gap: 12px;
+  }
+  
+  .logoContainer {
+    width: 40px;
+    height: 40px;
+  }
+}
