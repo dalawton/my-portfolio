@@ -75,7 +75,7 @@ export default function Home() {
           <div className={homeStyles.illustration}>
             <Image
               src="/peace-frog.png"
-              alt=""
+              alt="Hi Frog"
               width={400}
               height={500}
               priority

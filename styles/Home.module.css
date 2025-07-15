@@ -62,13 +62,10 @@
 .subtitle {
   font-size: 1.5rem;
   color: #4a5568;
-  margin: 0 0 2rem 0;
+  margin: 10px;
   font-weight: 400;
-  background: rgba(202, 255, 189, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  backdrop-filter: blur(10px);
+  background: rgba(75, 95, 71, 0.95);
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
