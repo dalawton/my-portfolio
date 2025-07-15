@@ -44,6 +44,13 @@ export default function Home() {
       technologies: ["PHP", "JavaScript", "SQL", "HTML/CSS"],
       link: "https://github.com/dalawton/eic-inventory-final",
     },
+    {
+      id: 4,
+      title: "Bug Bot",
+      description: "Discord bot that provides current jobs, events and resources for career development.",
+      technologies: ["Python", "Nox", "Discord.py"],
+      link: "https://github.com/innovateorange/DiscordBot",
+    },
   ];
 
   const toggleCard = (id) => {
@@ -76,8 +83,8 @@ export default function Home() {
             <Image
               src="/peace-frog.png"
               alt="Hi Frog"
-              width={400}
-              height={400}
+              width={350}
+              height={350}
               priority
             />
           </div>
@@ -91,7 +98,7 @@ export default function Home() {
             <Image 
               src="/frog-image.png"
               alt="Frog"
-              width={250}
+              width={300}
               height={200}
               priority
               className={experienceStyles.titleFrog}
