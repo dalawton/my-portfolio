@@ -68,7 +68,7 @@ export default function Home() {
               src="/frog-image.png"
               alt="Character illustration"
               width={400}
-              height={400}
+              height={500}
               priority
             />
           </div>
