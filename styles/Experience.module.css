@@ -56,8 +56,8 @@
 }
 
 .markerDot {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-image: url('/lilypad.png');
   background-size: contain;
   background-repeat: no-repeat;

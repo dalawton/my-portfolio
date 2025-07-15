@@ -92,8 +92,8 @@ export default function Home() {
             <Image 
               src="/frog-image.png"
               alt=""
-              width={40}
-              height={40}
+              width={100}
+              height={200}
               priority
               className={experienceStyles.illustration}
             />
