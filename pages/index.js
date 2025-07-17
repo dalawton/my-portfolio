@@ -51,6 +51,20 @@ export default function Home() {
       technologies: ["Python", "Nox", "Discord.py"],
       link: "https://github.com/innovateorange/DiscordBot",
     },
+    {
+      id: 5,
+      title: "Portfolio Website",
+      description: "Personal portfolio website with unique styling.",
+      technologies: ["Next.js", "JavaScript", "HTML/CSS"],
+      link: "https://github.com/dalawton/my-portfolio",
+    },
+    {
+      id: 6,
+      title: "Movie Tinder",
+      description: "Website that uses Movie API data to generate movies to 'swipe' to like and add to library of liked movies.",
+      technologies: ["TypeScript", "React", "Next.js", "HTML/CSS"],
+      link: "https://github.com/dalawton/movie-tinder",
+    },
   ];
 
   const toggleCard = (id) => {
@@ -94,15 +108,15 @@ export default function Home() {
       <section id="experience" className={experienceStyles.experienceSection}>
         <div className={experienceStyles.experienceContainer}>
           <div className={experienceStyles.sectionTitleRow}>
-            <h2 className={experienceStyles.sectionTitle}>Experience</h2>
             <Image 
               src="/frog-image.png"
               alt="Frog"
-              width={300}
+              width={380}
               height={200}
               priority
               className={experienceStyles.titleFrog}
             />
+            <h2 className={experienceStyles.sectionTitle}>Experience</h2>
           </div>
           
           <div className={experienceStyles.timeline}>
