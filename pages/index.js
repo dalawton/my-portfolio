@@ -92,7 +92,29 @@ export default function Home() {
             <h1 className={homeStyles.title}>Hi, I&apos;m Danielle</h1>
             <p className={homeStyles.subtitle}>Currently I&apos;m a junior Computer Science major at Syracuse University! I serve as the Secretary for Innovate Orange and I&apos;m a member of Delta Phi Epsilon!</p>
           </div>
-          
+
+          <div className={homeStyles.resumeSection}>
+            <a 
+              href="/resume.pdf" 
+              download="Resume-Danielle_Lawton.pdf"
+              className={homeStyles.resumeLink}
+            >
+              <svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2"
+                className={homeStyles.downloadIcon}
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7,10 12,15 17,10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Resume
+            </a>
+          </div>
           <div className={homeStyles.illustration}>
             <Image
               src="/peace-frog.png"
