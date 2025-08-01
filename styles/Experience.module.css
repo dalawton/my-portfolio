@@ -1,4 +1,140 @@
 /* styles/Experience.module.css */
+.container {
+  background: #c5f6c5;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2rem 3rem;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: #09240f;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  min-height: 17vw;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.textSection {
+  flex: 1;
+  max-width: 800px;
+}
+
+.subtitle {
+  display: flex;
+  font-size: 1.6rem;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 20px;
+  font-weight: 400;
+  background: rgba(153, 175, 149, 0.43);
+  border-radius: 20px;
+  border: 2px solid #3c4c39;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.illustration {
+  flex-shrink: 0;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+.resumeSection {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.resumeLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #3c4c39;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.resumeLink:hover {
+  background: #2a3b28;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+
+  .navLink {
+    font-size: 1rem;
+  }
+
+  .illustration img {
+    width: 350px;
+    height: 350px;
+  }
+}
 .experienceSection {
   padding: 10px 0;
   background: #6a8d6a;
@@ -262,7 +398,7 @@
 
 @media (max-width: 768px) {
   .experienceSection {
-    padding: 40px 0;
+    padding: 30px 0;
   }
   
   .experienceContainer {

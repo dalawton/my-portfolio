@@ -2,9 +2,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import homeStyles from '../styles/Home.module.css'
 import experienceStyles from '../styles/Experience.module.css'
 import projectsStyles from '../styles/Projects.module.css'
+import connectStyles from '../styles/Connect.module.css'
 
 export default function Home() {
   const [expandedCard, setExpandedCard] = useState(null);
@@ -72,50 +72,48 @@ export default function Home() {
   };
 
   return (
-    <div className={homeStyles.container}>
+    <div className={experienceStyles.container}>
       <Head>
         <title>Danielle - Computer Science Portfolio</title>
         <meta name="description" content="Danielle's Computer Science Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={homeStyles.header}>
-        <nav className={homeStyles.nav}>
-          <a href="#experience" className={homeStyles.navLink}>Experience</a>
-          <a href="#projects" className={homeStyles.navLink}>Projects</a>
+      <header className={experienceStyles.header}>
+        <nav className={experienceStyles.nav}>
+          <a href="#experience" className={experienceStyles.navLink}>Experience</a>
+          <a href="#projects" className={experienceStyles.navLink}>Projects</a>
         </nav>
       </header>
 
-      <main className={homeStyles.main}>
-        <div className={homeStyles.content}>
-          <div className={homeStyles.textSection}>
-            <h1 className={homeStyles.title}>Hi, I&apos;m Danielle</h1>
-            <p className={homeStyles.subtitle}>Currently I&apos;m a junior Computer Science major at Syracuse University! I serve as the Secretary for Innovate Orange and I&apos;m a member of Delta Phi Epsilon!</p>
-          </div>
-          
-          <div className={homeStyles.illustration}>
-            <Image
-              src="/peace-frog.png"
-              alt="Hi Frog"
-              width={350}
-              height={350}
-              priority
-            />
-          </div>
-        </div>
-      </main>
+      
 
       <section id="experience" className={experienceStyles.experienceSection}>
+        <main className={experienceStyles.main}>
+        <div className={experienceStyles.textSection}>
+          <div className={experienceStyles.subtitle}>
+            <p>Hi, I&apos;m Danielle Lawton! Currently I&apos;m a junior studying Computer Science at Syracuse University! I serve as the Secretary for Innovate Orange and I&apos;m a member of Delta Phi Epsilon!</p>
+            <div className={experienceStyles.illustration}>
+              <Image
+                src="/peace-frog.png"
+                alt="Hi Frog"
+                width={180}
+                height={180}
+                priority
+              />
+            </div>
+          </div>
+          <div className={experienceStyles.resumeSection}>
+            <a href="/DanielleLawton-Resume.pdf" download={"DanielleLawton-Resume.pdf"} className={experienceStyles.resumeLink}>
+              Download My Resume
+            </a>
+            <a href="#connect" className={experienceStyles.resumeLink}>Connect With Me</a>
+          </div>
+
+        </div>
+      </main>
         <div className={experienceStyles.experienceContainer}>
           <div className={experienceStyles.sectionTitleRow}>
-            <Image 
-              src="/frog-image.png"
-              alt="Frog"
-              width={380}
-              height={200}
-              priority
-              className={experienceStyles.titleFrog}
-            />
             <h2 className={experienceStyles.sectionTitle}>Experience</h2>
           </div>
           
@@ -210,6 +208,26 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      <section id="connect" className={connectStyles.connectSection}>
+        <div className={connectStyles.connectContainer}>
+          <div className={connectStyles.main}>
+            <h2 className={connectStyles.sectionTitle}>Connect With Me</h2>
+            <div className={connectStyles.socialLinks}>
+              <a href="https://www.linkedin.com/in/danielle-lawton/" target="_blank" rel="noopener noreferrer" className={connectStyles.socialLink}>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.github.com/dalawton" target="_blank" rel="noopener noreferrer" className={connectStyles.socialLink}>
+                <span>GitHub</span>
+              </a>
+              <a href="mailto:daniellelawton8@gmail.com" className={connectStyles.socialLink}>
+                <span>Email</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
