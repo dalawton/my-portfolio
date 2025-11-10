@@ -18,9 +18,13 @@ export default function Home() {
       location: "Norwood, MA",
       description: "Developed inventory database and tracking systems to automize inventory counts",
       responsibilities: [
-        "TO BE ADDED"
+        "Designed and implemented inventory management systems with PHP, SQL, JavaScript and HTML/CSS to track and optimize stock levels for over 2,000 battery components and finished products",
+        "Developed and maintained relational databases for efficient storage, retrieval and analysis of production and repair information",
+        "Automated ordering processes, including procurement of parts, scheduling and notices of repairs and initiation of battery builds, reducing manual work, improving turnaround time and reducing overall confusion",
+        "Streamlined operations by integrating front-end interfaces with backend systems"
       ],
       technologies: ["PHP", "JavaScript", "SQL", "HTML/CSS"],
+      logo: "/eic-logo.webp"
     },
     {
       id: 2,
@@ -30,9 +34,12 @@ export default function Home() {
       location: "Lowell, MA",
       description: "Conducted quality control checks and developed system processes",
       responsibilities: [
-        "TO BE ADDED"
+        "Conducted thorough inspections to maintain stringent product quality and consistency standards",
+        "Collaborated with cross-functional teams, including marketing and interns, to brainstorm innovative ideas and strategies to increase customer engagement",
+        "Assisted in production tasks and mailing operations to support warehouse operations"
       ],
-      technologies: ["TODO"],
+      technologies: ["Excel", "Google Sheets", "Quality Control"],
+      logo: "/ds_graphics_logo.jpeg"
     },
   ];
 
@@ -42,13 +49,13 @@ export default function Home() {
       title: "EIC Inventory Tracker",
       description: "Automated inventory management system that syncs with SQL database to provide real time inventory counts. Created an online order form for new parts to send emails and update to database on form submissions. Additional functionality for tracking completed batteries and repairs via serial numbers.",
       technologies: ["PHP", "JavaScript", "SQL", "HTML/CSS"],
-      link: "https://github.com/dalawton/eic-inventory-final",
+      link: "https://github.com/dalawton/eic-inventory",
     },
     {
       id: 4,
-      title: "Bug Bot",
-      description: "Discord bot that provides current jobs, events and resources for career development.",
-      technologies: ["Python", "Nox", "Discord.py"],
+      title: "BugBot",
+      description: "Production-ready Discord bot with automated welcome messages, command handling, and GitHub webhook integration. Features multi-environment deployment strategy with robust CI/CD pipline on Google Cloud Platform.",
+      technologies: ["Python", "Nox", "Google Cloud", "Discord.py"],
       link: "https://github.com/innovateorange/DiscordBot",
     },
     {
@@ -57,13 +64,6 @@ export default function Home() {
       description: "Personal portfolio website with unique styling.",
       technologies: ["Next.js", "JavaScript", "HTML/CSS"],
       link: "https://github.com/dalawton/my-portfolio",
-    },
-    {
-      id: 6,
-      title: "Movie Tinder",
-      description: "Website that uses Movie API data to generate movies to 'swipe' to like and add to library of liked movies.",
-      technologies: ["TypeScript", "React", "Next.js", "HTML/CSS"],
-      link: "https://github.com/dalawton/movie-tinder",
     },
   ];
 
@@ -81,18 +81,20 @@ export default function Home() {
 
       <header className={experienceStyles.header}>
         <nav className={experienceStyles.nav}>
-          <a href="#experience" className={experienceStyles.navLink}>Experience</a>
-          <a href="#projects" className={experienceStyles.navLink}>Projects</a>
+          <a href="#experience" className={experienceStyles.resumeLink}>Experience</a>
+          <a href="#projects" className={experienceStyles.resumeLink}>Projects</a>
+          <a href="/Resume-Danielle_Lawton.pdf" download={"Resume-Danielle_Lawton.pdf"} className={experienceStyles.resumeLink}>
+              Download My Resume
+          </a>
+          <a href="#connect" className={experienceStyles.resumeLink}>Connect With Me</a>
         </nav>
       </header>
-
-      
 
       <section id="experience" className={experienceStyles.experienceSection}>
         <main className={experienceStyles.main}>
         <div className={experienceStyles.textSection}>
           <div className={experienceStyles.subtitle}>
-            <p>Hi, I&apos;m Danielle Lawton! Currently I&apos;m a junior studying Computer Science at Syracuse University! I serve as the Secretary for Innovate Orange and I&apos;m a member of Delta Phi Epsilon!</p>
+            <p>Hi, I&apos;m Danielle Lawton! Currently I&apos;m a junior studying Computer Science at Syracuse University! I serve as the Secretary for Innovate Orange and I&apos;m the Member at Large for Delta Phi Epsilon!</p>
             <div className={experienceStyles.illustration}>
               <Image
                 src="/peace-frog.png"
@@ -102,12 +104,6 @@ export default function Home() {
                 priority
               />
             </div>
-          </div>
-          <div className={experienceStyles.resumeSection}>
-            <a href="/DanielleLawton-Resume.pdf" download={"DanielleLawton-Resume.pdf"} className={experienceStyles.resumeLink}>
-              Download My Resume
-            </a>
-            <a href="#connect" className={experienceStyles.resumeLink}>Connect With Me</a>
           </div>
 
         </div>
@@ -129,6 +125,15 @@ export default function Home() {
                   <div className={experienceStyles.cardHeader} onClick={() => toggleCard(exp.id)}>
                     <div className={experienceStyles.companyInfo}>
                       <div className={experienceStyles.logoContainer}>
+                        {exp.logo && (
+                          <Image
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            width={60}
+                            height={60}
+                            priority
+                          />
+                        )}
                       </div>
                       <div className={experienceStyles.titleInfo}>
                         <h3 className={experienceStyles.jobTitle}>{exp.title}</h3>
