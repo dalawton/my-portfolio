@@ -1,0 +1,48 @@
+.connectSection {
+  padding: 10px 0;
+  background: #6a8d6a;
+  position: relative;
+}
+
+.connectContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.socalLinks {
+  display: flex;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.socialLink {
+  display: block;
+  margin: auto;
+  max-width: 200px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #3c4c39;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.main {
+  align-items: center;
+  justify-content: center;
+}

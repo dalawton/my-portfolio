@@ -1,5 +1,5 @@
 .container {
-  min-height: 60vh;
+  min-height: 55vh;
   background: #c5f6c5;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60vh;
+  min-height: 55vh;
   padding: 2rem;
 }
 
@@ -48,7 +48,7 @@
 
 .textSection {
   flex: 1;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .title {
@@ -62,8 +62,14 @@
 .subtitle {
   font-size: 1.5rem;
   color: #4a5568;
-  margin: 0 0 2rem 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 20px;
   font-weight: 400;
+  background: rgba(75, 95, 71, 0.1);
+  border-radius: 20px;
+  border: 2px solid #4b5f47;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .illustration {
@@ -73,8 +79,31 @@
   justify-content: center;
 }
 
-.illustration img {
-  animation: float 3s ease-in-out infinite;
+.resumeSection {
+  margin-top: 1.5rem;
+}
+
+.resumeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #aadaaa;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.resumeLink:hover {
+  background-color: #7a967a;
+  transform: translateY(-2px);
+}
+
+.downloadIcon {
+  width: 16px;
+  height: 16px;
 }
 
 @keyframes float {
@@ -114,7 +143,7 @@
   }
 
   .illustration img {
-    width: 400px;
-    height: 600px;
+    width: 350px;
+    height: 350px;
   }
 }

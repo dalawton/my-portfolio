@@ -1,8 +1,144 @@
 /* styles/Experience.module.css */
+.container {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2rem 3rem;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  color: #09240f;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.main {
+  display: flex;
+  padding-top: 50px;
+  align-items: center;
+  min-height: 17vw;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.textSection {
+  flex: 1;
+  max-width: 1000px;
+}
+
+.subtitle {
+  display: flex;
+  font-size: 1.6rem;
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 0px;
+  padding: 20px;
+  font-weight: 400;
+  background: rgba(153, 175, 149, 0.43);
+  border-radius: 20px;
+  border: 2px solid #3c4c39;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.illustration {
+  flex-shrink: 0;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+.resumeSection {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.resumeLink {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #3c4c39;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.resumeLink:hover {
+  background: #2a3b28;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+
+  .navLink {
+    font-size: 1rem;
+  }
+
+  .illustration img {
+    width: 350px;
+    height: 350px;
+  }
+}
 .experienceSection {
-  padding: 40px 0;
+  padding: 10px 0;
   background: #6a8d6a;
-  min-height: 60vh;
+  min-height: 50vh;
   position: relative;
 }
 
@@ -21,7 +157,7 @@
 .experienceContainer {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 0;
   position: relative;
   z-index: 1;
 }
@@ -31,7 +167,7 @@
   font-size: 3rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -43,7 +179,7 @@
 
 .timelineItem {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -56,19 +192,17 @@
 }
 
 .markerDot {
-  width: 20px;
-  height: 20px;
-  background: #85e38b;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 2;
+  width: 90px;
+  height: 90px;
+  background-image: url('/lilypad.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .timelineLine {
-  width: 3px;
-  height: 100px;
+  width: 2px;
+  height: 70%;
   background: rgba(21, 95, 57, 0.8);
   margin-top: 10px;
   border-radius: 2px;
@@ -186,10 +320,11 @@
 .cardDetails.expanded {
   max-height: 500px;
   padding: 25px;
+  padding-top: 0px;
 }
 
 .responsibilities {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .responsibilities h5 {
@@ -249,29 +384,42 @@
   transform: translateY(-2px);
 }
 
+.sectionTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.titleFrog {
+  width: 190px;
+  height: 150px;
+}
+
 @media (max-width: 768px) {
   .experienceSection {
-    padding: 60px 0;
+    padding: 30px 0;
   }
   
   .experienceContainer {
-    padding: 0 15px;
+    padding: 0 10px;
   }
   
   .sectionTitle {
     font-size: 2.2rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .timelineItem {
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   
   .timelineMarker {
     flex-direction: row;
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     align-items: flex-start;
   }
   
@@ -324,6 +472,11 @@
     padding: 5px 12px;
     font-size: 0.8rem;
   }
+
+  .illustration img {
+    width: 300px;
+    height: 200px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -342,5 +495,10 @@
   .logoContainer {
     width: 40px;
     height: 40px;
+  }
+
+  .illustration img {
+    width: 150px;
+    height: 100px;
   }
 }

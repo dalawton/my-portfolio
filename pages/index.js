@@ -2,9 +2,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import homeStyles from '../styles/Home.module.css'
 import experienceStyles from '../styles/Experience.module.css'
-import aboutStyles from '../styles/About.module.css'
+import projectsStyles from '../styles/Projects.module.css'
+import connectStyles from '../styles/Connect.module.css'
 
 export default function Home() {
   const [expandedCard, setExpandedCard] = useState(null);
@@ -18,9 +18,13 @@ export default function Home() {
       location: "Norwood, MA",
       description: "Developed inventory database and tracking systems to automize inventory counts",
       responsibilities: [
-        "TO BE ADDED"
+        "Designed and implemented inventory management systems with PHP, SQL, JavaScript and HTML/CSS to track and optimize stock levels for over 2,000 battery components and finished products",
+        "Developed and maintained relational databases for efficient storage, retrieval and analysis of production and repair information",
+        "Automated ordering processes, including procurement of parts, scheduling and notices of repairs and initiation of battery builds, reducing manual work, improving turnaround time and reducing overall confusion",
+        "Streamlined operations by integrating front-end interfaces with backend systems"
       ],
-      technologies: ["PHP", "JavaScript", "SQL", "HTML"],
+      technologies: ["PHP", "JavaScript", "SQL", "HTML/CSS"],
+      logo: "/eic-logo.webp"
     },
     {
       id: 2,
@@ -30,9 +34,36 @@ export default function Home() {
       location: "Lowell, MA",
       description: "Conducted quality control checks and developed system processes",
       responsibilities: [
-        "TO BE ADDED"
+        "Conducted thorough inspections to maintain stringent product quality and consistency standards",
+        "Collaborated with cross-functional teams, including marketing and interns, to brainstorm innovative ideas and strategies to increase customer engagement",
+        "Assisted in production tasks and mailing operations to support warehouse operations"
       ],
-      technologies: ["TODO"],
+      technologies: ["Excel", "Google Sheets", "Quality Control"],
+      logo: "/ds_graphics_logo.jpeg"
+    },
+  ];
+
+  const projects = [
+    {
+      id: 3,
+      title: "EIC Inventory Tracker",
+      description: "Automated inventory management system that syncs with SQL database to provide real time inventory counts. Created an online order form for new parts to send emails and update to database on form submissions. Additional functionality for tracking completed batteries and repairs via serial numbers.",
+      technologies: ["PHP", "JavaScript", "SQL", "HTML/CSS"],
+      link: "https://github.com/dalawton/eic-inventory",
+    },
+    {
+      id: 4,
+      title: "BugBot",
+      description: "Production-ready Discord bot with automated welcome messages, command handling, and GitHub webhook integration. Features multi-environment deployment strategy with robust CI/CD pipline on Google Cloud Platform.",
+      technologies: ["Python", "Nox", "Google Cloud", "Discord.py"],
+      link: "https://github.com/innovateorange/DiscordBot",
+    },
+    {
+      id: 5,
+      title: "Portfolio Website",
+      description: "Personal portfolio website with unique styling.",
+      technologies: ["Next.js", "JavaScript", "HTML/CSS"],
+      link: "https://github.com/dalawton/my-portfolio",
     },
   ];
 
@@ -41,52 +72,46 @@ export default function Home() {
   };
 
   return (
-    <div className={homeStyles.container}>
+    <div className={experienceStyles.container}>
       <Head>
         <title>Danielle - Computer Science Portfolio</title>
         <meta name="description" content="Danielle's Computer Science Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={homeStyles.header}>
-        <nav className={homeStyles.nav}>
-          <a href="#experience" className={homeStyles.navLink}>Experience</a>
-          <a href="#about" className={homeStyles.navLink}>About</a>
-          <a href="#projects" className={homeStyles.navLink}>Projects</a>
-          <a href="#contact" className={homeStyles.navLink}>Contact</a>
+      <header className={experienceStyles.header}>
+        <nav className={experienceStyles.nav}>
+          <a href="#experience" className={experienceStyles.resumeLink}>Experience</a>
+          <a href="#projects" className={experienceStyles.resumeLink}>Projects</a>
+          <a href="/Resume-Danielle_Lawton.pdf" download={"Resume-Danielle_Lawton.pdf"} className={experienceStyles.resumeLink}>
+              Download My Resume
+          </a>
+          <a href="#connect" className={experienceStyles.resumeLink}>Connect With Me</a>
         </nav>
       </header>
 
-      <main className={homeStyles.main}>
-        <div className={homeStyles.content}>
-          <div className={homeStyles.textSection}>
-            <h1 className={homeStyles.title}>Hi, I&apos;m Danielle</h1>
-            <p className={homeStyles.subtitle}>Computer Science Student at Syracuse University</p>
-          </div>
-          
-          <div className={homeStyles.illustration}>
-            <Image
-              src="/peace-frog.png"
-              width={400}
-              height={500}
-              priority
-            />
-          </div>
-        </div>
-      </main>
-
       <section id="experience" className={experienceStyles.experienceSection}>
-        <div className={experienceStyles.experienceContainer}>
-          <h2 className={experienceStyles.sectionTitle}>Experience
-            <div className={homeStyles.illustration}>
-              <Image 
-                src="/frog-image.png"
-                width={200}
-                height={300}
+        <main className={experienceStyles.main}>
+        <div className={experienceStyles.textSection}>
+          <div className={experienceStyles.subtitle}>
+            <p>Hi, I&apos;m Danielle Lawton! Currently I&apos;m a junior studying Computer Science at Syracuse University! I serve as the Secretary for Innovate Orange and I&apos;m the Member at Large for Delta Phi Epsilon!</p>
+            <div className={experienceStyles.illustration}>
+              <Image
+                src="/peace-frog.png"
+                alt="Hi Frog"
+                width={180}
+                height={180}
                 priority
               />
             </div>
-          </h2>
+          </div>
+
+        </div>
+      </main>
+        <div className={experienceStyles.experienceContainer}>
+          <div className={experienceStyles.sectionTitleRow}>
+            <h2 className={experienceStyles.sectionTitle}>Experience</h2>
+          </div>
           
           <div className={experienceStyles.timeline}>
             {experiences.map((exp, index) => (
@@ -100,6 +125,15 @@ export default function Home() {
                   <div className={experienceStyles.cardHeader} onClick={() => toggleCard(exp.id)}>
                     <div className={experienceStyles.companyInfo}>
                       <div className={experienceStyles.logoContainer}>
+                        {exp.logo && (
+                          <Image
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            width={60}
+                            height={60}
+                            priority
+                          />
+                        )}
                       </div>
                       <div className={experienceStyles.titleInfo}>
                         <h3 className={experienceStyles.jobTitle}>{exp.title}</h3>
@@ -147,9 +181,59 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className={aboutStyles.aboutSection}>
-        <div className={aboutStyles.aboutContainer}>
-          <h2 className={aboutStyles.sectionTitle}>About Me</h2>
+      <section id="projects" className={projectsStyles.projectsSection}>
+        <div className={projectsStyles.projectsContainer}>
+          <h2 className={projectsStyles.sectionTitle}>Projects</h2>
+          <div className={projectsStyles.timeline}>
+            {projects.map((proj) => (
+              <div key={proj.id} className={projectsStyles.timelineItem}>
+                <div className={projectsStyles.projectsCard}>
+                  <div className={projectsStyles.cardHeader} onClick={() => toggleCard(proj.id)}>
+                    <div className={projectsStyles.companyInfo}>
+                      <div className={projectsStyles.logoContainer}>
+                      </div>
+                      <div className={projectsStyles.titleInfo}>
+                        <h3 className={projectsStyles.jobTitle}>{proj.title}</h3>
+                      </div>
+                    </div>
+                    <div className={projectsStyles.technologies}>
+                      <div className={projectsStyles.techTags}>
+                        {proj.technologies.map((tech, i) => (
+                          <span key={i} className={projectsStyles.techTag}>{tech}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className={projectsStyles.cardDescription}>
+                    <p>{proj.description}</p>
+                    <a href={proj.link} target="_blank" rel="noopener noreferrer" className={projectsStyles.projectLink}>
+                      {proj.link}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      <section id="connect" className={connectStyles.connectSection}>
+        <div className={connectStyles.connectContainer}>
+          <div className={connectStyles.main}>
+            <h2 className={connectStyles.sectionTitle}>Connect With Me</h2>
+            <div className={connectStyles.socialLinks}>
+              <a href="https://www.linkedin.com/in/danielle-lawton/" target="_blank" rel="noopener noreferrer" className={connectStyles.socialLink}>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.github.com/dalawton" target="_blank" rel="noopener noreferrer" className={connectStyles.socialLink}>
+                <span>GitHub</span>
+              </a>
+              <a href="mailto:daniellelawton8@gmail.com" className={connectStyles.socialLink}>
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
